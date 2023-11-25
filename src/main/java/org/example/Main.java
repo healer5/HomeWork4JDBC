@@ -15,7 +15,6 @@ public class Main {
             System.out.println("Max Salary Worker - Name: " + name + ", Salary: " + salary);
         });
 
-        System.out.println("----------------------");
 
         // Find Max Projects Client
         List<Object[]> maxProjectCountClients = databaseQueryService.findMaxProjectsClient();
@@ -25,7 +24,6 @@ public class Main {
             System.out.println("Max Projects Client - Client Name: " + clientName + ", Project Count: " + projectCount);
         });
 
-        System.out.println("----------------------");
 
         // Find Longest Project
         List<Object[]> longestProjects = databaseQueryService.findLongestProject();
@@ -41,7 +39,6 @@ public class Main {
                     ", Finish Date: " + finishDate + ", Month Count: " + monthCount);
         });
 
-        System.out.println("----------------------");
 
         // Find Youngest and Eldest Workers
         List<Object[]> youngestEldestWorkers = databaseQueryService.findYoungestEldestWorkers();
@@ -51,8 +48,6 @@ public class Main {
             String birthday = result[2].toString();
             System.out.println(type + " Worker - Name: " + name + ", Birthday: " + birthday);
         });
-
-        System.out.println("----------------------");
 
         // Find Project Prices
         List<Object[]> projectPrices = databaseQueryService.findProjectPrice();

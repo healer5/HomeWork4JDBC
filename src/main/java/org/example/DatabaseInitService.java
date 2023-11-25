@@ -11,22 +11,18 @@ public class DatabaseInitService {
 
     public static void main(String[] args) {
         try {
-            // Get a connection to the database.
             Connection connection = Database.getInstance().getConnection();
 
-            // Read the SQL script from the init_db.sql file.
             String sqlScript = readSqlScript("src/main/resources/init_db.sql");
 
-            // Execute the queries from the SQL script.
             executeSqlScript(connection, sqlScript);
 
-            // Close the connection.
             Database.getInstance().closeConnection();
 
             System.out.println("Database initialized successfully.");
 
         } catch (SQLException | IOException e) {
-            e.printStackTrace(); // Handle the exception appropriately.
+            e.printStackTrace();
         }
     }
 
@@ -43,11 +39,9 @@ public class DatabaseInitService {
 
     private static void executeSqlScript(Connection connection, String sqlScript) throws SQLException {
         try (Statement statement = connection.createStatement()) {
-            // Split the script into individual queries using semicolons.
             String[] queries = sqlScript.split(";");
             for (String query : queries) {
                 if (!query.trim().isEmpty()) {
-                    // Execute each query.
                     statement.executeUpdate(query);
                 }
             }
