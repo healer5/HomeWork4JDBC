@@ -12,6 +12,8 @@ repositories {
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+//    testImplementation group: 'com.h2database', name: 'h2', version: '2.2.224'
+    implementation 'com.h2database:h2:2.2.224'
 }
 
 test {

@@ -1,6 +1,11 @@
-create sequence worker_seq start 1;
-create sequence client_seq start 1;
-create sequence project_seq start 1;
+create sequence worker_seq;
+create sequence client_seq;
+create sequence project_seq;
+
+-- Set the starting value for the sequences
+ALTER SEQUENCE worker_seq RESTART WITH 1;
+ALTER SEQUENCE client_seq RESTART WITH 1;
+ALTER SEQUENCE project_seq RESTART WITH 1;
 
 CREATE TYPE workerlevel AS ENUM ('Trainee', 'Junior', 'Middle', 'Senior');
 
