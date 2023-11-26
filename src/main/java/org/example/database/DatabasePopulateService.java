@@ -1,5 +1,4 @@
-package org.example;
-
+package org.example.database;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -7,19 +6,19 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class DatabaseInitService {
+public class DatabasePopulateService {
 
     public static void main(String[] args) {
         try {
             Connection connection = Database.getInstance().getConnection();
 
-            String sqlScript = readSqlScript("src/main/resources/init_db.sql");
+            String sqlScript = readSqlScript("src/main/resources/populate_db.sql");
 
             executeSqlScript(connection, sqlScript);
 
             Database.getInstance().closeConnection();
 
-            System.out.println("Database initialized successfully.");
+            System.out.println("Database populated successfully.");
 
         } catch (SQLException | IOException e) {
             e.printStackTrace();

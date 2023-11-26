@@ -1,4 +1,4 @@
-package org.example;
+package org.example.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -18,7 +18,7 @@ public class Database {
             Class.forName("org.h2.Driver");
             connection = DriverManager.getConnection(URL, USER, PASSWORD);
         } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace(); // Handle the exception appropriately.
+            e.printStackTrace();
         }
     }
 
