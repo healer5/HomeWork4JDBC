@@ -15,9 +15,8 @@ public class Database {
 
     private Database() {
         try {
-            Class.forName("org.h2.Driver");
             connection = DriverManager.getConnection(URL, USER, PASSWORD);
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -31,15 +30,5 @@ public class Database {
 
     public Connection getConnection() {
         return connection;
-    }
-
-    public void closeConnection() {
-        if (connection != null) {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
     }
 }
