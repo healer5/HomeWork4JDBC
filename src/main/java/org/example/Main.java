@@ -24,9 +24,6 @@ public class Main {
 
         List<YoungestEldestWorkers> youngestEldestWorkers = queryService.findYoungestEldestWorkers();
         printYoungestEldestWorkers(youngestEldestWorkers);
-
-        List<ProjectPrice> projectPrices = queryService.findProjectPrice();
-        printProjectPrices(projectPrices);
     }
 
     private static void printMaxProjectCountClients(List<MaxProjectCountClient> clients) {
@@ -58,14 +55,6 @@ public class Main {
         for (YoungestEldestWorkers worker : workers) {
             System.out.println("Youngest Name: " + worker.getYoungestName() + ", Youngest Age: " + worker.getYoungestAge() +
                     ", Eldest Name: " + worker.getEldestName() + ", Eldest Age: " + worker.getEldestAge());
-        }
-        System.out.println();
-    }
-
-    private static void printProjectPrices(List<ProjectPrice> projectPrices) {
-        System.out.println("Project Prices:");
-        for (ProjectPrice projectPrice : projectPrices) {
-            System.out.println("Project Name: " + projectPrice.getProjectName() + ", Price: " + projectPrice.getPrice());
         }
         System.out.println();
     }
